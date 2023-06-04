@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./table.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+  </head>
+  <body>
+  
+   <div class="container">
+   
+    <h1>Employee Form</h1>
+    <a href="./index.html">Log Out<i class="fa-regular fa-backward-fast fa-beat" style="color: #67fe9c;"></i></a>
+    
+    <div class="top-box">
+    <button id="openModal" class="open-modal"><i class="fa-solid fa-person-circle-plus fa-beat" style="color: #0f0b0b;"></i></button>
+  <div>
+    <label for="searchName">Search by Name:</label>
+    <input type="text" id="searchName" class="search" name="searchName" oninput="searchEmployees()"><br><br>
+
+  </div>
+    <div>
+      <label for="filterPosition"></label>
+    <select id="filterPosition" class="filter" name="filterPosition" onchange="filterEmployees()">
+      <option value="">All</option>
+      <option value="junior">Junior</option>
+      <option value="middle">Middle</option>
+      <option value="senior">Senior</option>
+    </select>
+    </div>
+   
+  </div>
+
+  <div id="employeeModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form id="employeeForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required><br><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required><br><br>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required><br><br>
+
+        <label for="birthDate">Birth Date:</label>
+        <input type="date" id="birthDate" name="birthDate" required><br><br>
+
+        <label for="position">Position:</label>
+        <select id="position" name="position" required>
+          <option value="ReactJs Developer">ReactJs Developer</option>
+          <option value="NodeJs Developer">NodeJs Developer</option>
+          <option value="Go Developer">Go Developer</option>
+          <!-- Add more options here -->
+        </select><br><br>
+
+        <label for="typePosition">Type of Position:</label>
+        <select id="typePosition" name="typePosition" required>
+          <option value="junior">Junior</option>
+          <option value="middle">Middle</option>
+          <option value="senior">Senior</option>
+        </select><br><br>
+
+        <label for="salary">Salary:</label>
+        <input type="number" id="salary" name="salary" required><br><br>
+
+        <label for="isMarried">Married:</label>
+        <input type="checkbox" class="marid" id="isMarried" name="isMarried"><br><br>
+
+        <input type="submit" class="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+
+  <table id="employeeTable" border="1">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>Birth Date</th>
+        <th>Position</th>
+        <th>Type of Position</th>
+        <th>Salary</th>
+        <th>Married</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="employeeTableBody"></tbody>
+  </table>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./table.js"></script>
+  </body>
+</html>
